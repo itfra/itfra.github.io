@@ -187,6 +187,7 @@ var mapNomi = new Map();
 var mapDettagli = new Map();
 var mapReview1 = new Map();
 var mapReview2 = new Map();
+var mapImage = new Map();
 var arraySelectedContext = [0,0,0,0,0,0,0,0,0,0,0,0,0];
 var arrayUrl1Match = [];
 var arrayUrl2Match = [];
@@ -323,6 +324,28 @@ function letturaDettagli(){
     }
 }
 
+function letturaImage(){
+    // read text from URL location
+		var urlExplanation = "";
+		var request = new XMLHttpRequest();
+    request.open('GET', 'js/urlImage2.txt');
+    request.send();
+		request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+          //  if (type.indexOf("text") !== 1) {
+							urlExplanation = request.responseText;
+              // return request.responseText;
+        	//   }
+        }
+				line = urlExplanation.toString().split('\n');
+				for (var i = 0; i < line.length; i++) {
+					let url = line[i].split(';')[0];
+					let url_image = line[i].split(';')[1];
+					mapImage.set(url + url_image);
+				}
+    }
+}
 
 function clearAllRadios() {
 	let array =[];
@@ -399,7 +422,9 @@ function startExplanationSystem() {
 	document.getElementById("indirizzo").innerHTML = dett.split(';')[0];
 	document.getElementById("telefono").innerHTML = 'Tel: '+dett.split(';')[1];
 	document.getElementById("categorie").innerHTML = 'Categoria: '+dett.split(';')[2];
-	setImage('https://s3-media4.fl.yelpcdn.com/bphoto/9o4XvXuW1X1z1wsmzIxrZw/ls.jpg');
+
+
+	setImage(urlConsigliato);
 
 	setExplanation1(datiInput, urlConsigliato);
 	setExplanation2(urlConsigliato);
@@ -633,7 +658,13 @@ function createListLocali(city){
 	console.log("locali selezionati per città: "+ mapLocal.size);
 }
 
-function setImage(urlImage){
+function setImage(url){
+	let urlImage = mapImage.get(url);
+
+	if(urlImage == undefined){
+		urlImage = 'http://panoramachef.it/wp-content/uploads/2013/09/management-ristorante.jpg';
+	}
+
 	var imageContainer = document.getElementById('image_container');
 	while (imageContainer.firstChild) {
 			imageContainer.removeChild(imageContainer.firstChild);
@@ -707,7 +738,7 @@ function suggerisciAltro(){
 	nome_locale = mapNomi.get(urlConsigliato);
 
 
-	setImage('https://s3-media4.fl.yelpcdn.com/bphoto/9o4XvXuW1X1z1wsmzIxrZw/ls.jpg');
+	setImage(urlConsigliato);
 
 	let dett = mapDettagli.get(urlConsigliato);
 	document.getElementById('nome_locale').innerHTML = nome_locale;
