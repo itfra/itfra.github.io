@@ -198,12 +198,6 @@ var nome_locale;
 var num_totali;
 var num_spiegati;
 
-
-var pasto = "";
-var umore = "";
-var salute = "";
-var giorno = "";
-var compagnia = "";
 // const firebase = require("firebase");
 // // Required for side-effects
 // require("firebase/firestore");
@@ -333,11 +327,6 @@ function getContextActive() {
 	let rad1 = document.getElementsByName('pasto');
 	let rad2 = document.getElementsByName('giorno');
 	let rad3 = document.getElementsByName('compagnia');
-	pasto = rad1;
-	umore = rad5;
-	salute = rad4;
-	giorno = rad2;
-	compagnia = rad3;
 	array.splice(0,0,rad1,rad2,rad3,rad4,rad5);
 	for (var i = 0; i < 5; i++) {
 		for (var j = 0; j < array[i].length; j++) {
@@ -700,6 +689,11 @@ function saveData(){
 	var convincimento =  document.getElementsByName('convincente')[0].checked;
 	var newInfo =  document.getElementsByName('nuove')[0].checked;
 	var fiducia =  document.getElementsByName('fiducia')[0].checked;
+	let compagnia = null;
+	let umore = null;
+	let giorno = null;
+	let salute = null;
+	let pasto = null;
 
 	for (var i = 0; i < arraySelectedContext.length; i++) {
 		if (arraySelectedContext[i] == 1){
