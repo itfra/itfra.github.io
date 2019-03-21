@@ -400,17 +400,18 @@ function setExplanation1(dati, url){
 
 	for(var i = 1; i < dati.length; i++){
 		let contesto = dati[i];
-		let key = url+contesto;
+		let key = url + contesto;
 
 		var para = document.createElement("p");
 		var node = document.createTextNode('Ti suggerisco di provare ' + nome_locale +'.');
 		para.appendChild(node);
 
+
 		explanation = mapReview1.get(key);
 		if (explanation != undefined){
 			num_spiegati ++;
 			console.log(explanation);
-			node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ' per questo motivo: "'+ explanation + '"');
+			var node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ' per questo motivo: "'+ explanation + '"');
 			para.appendChild(node);
 		}
 	}
