@@ -701,12 +701,45 @@ function saveData(){
 	var newInfo =  document.getElementsByName('nuove')[0].checked;
 	var fiducia =  document.getElementsByName('fiducia')[0].checked;
 
+	for (var i = 0; i < arraySelectedContext.length; i++) {
+		if (arraySelectedContext[i] == 1){
+			switch (i) {
+				case 0:
+				case 1:
+				case 2:
+					compagnia = getStringContext(arraySelectedContext[i]);
+					break;
+				case 3:
+				case 4:
+					giorno = getStringContext(arraySelectedContext[i]);
+					break;
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+					pasto = getStringContext(arraySelectedContext[i]);
+					break;
+				case 9:
+				case 10:
+					salute = getStringContext(arraySelectedContext[i]);
+					break;
+				case 11:
+				case 12:
+					umore = getStringContext(arraySelectedContext[i]);
+					break;
+				default:
+
+			}
+		}
+	}
+
 	var data = {
 		url : datiInput[0],
 		umore : umore,
 		giorno : giorno,
 		pasto :pasto,
 		compagnia :compagnia,
+		salute: salute,
 		contesti : num_totali,
 		spiegati : num_spiegati,
 		explanationPrefer : explanationPrefer,
