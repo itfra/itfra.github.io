@@ -409,16 +409,13 @@ function setExplanation1(dati, url){
 		explanation = mapReview1.get(key);
 		if (explanation != undefined){
 			num_spiegati ++;
+			console.log(explanation);
 			node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ' per questo motivo: "'+ explanation + '"');
 			para.appendChild(node);
 		}
 	}
 
-
-	if (num_spiegati != 0) {
-		element.appendChild(para);
-	}
-	else {
+	if (num_spiegati == 0) {
 		explanation = "non sono state rilevate spiegazioni per questo contesto"
 		node = document.createTextNode(explanation);
 		para.appendChild(node);
