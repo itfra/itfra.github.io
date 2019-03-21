@@ -193,7 +193,6 @@ var arrayUrl2Match = [];
 var arrayUrl3Match = [];
 var arrayUrl4Match = [];
 var arrayUrl5Match = [];
-//var iRandom;
 var datiInput;
 var nome_locale;
 var num_totali;
@@ -391,25 +390,21 @@ function startExplanationSystem() {
 
 	var arrayLocaliMatch = sceltaArrayUrl();
 
-	//iRandom = getRandomUrlFromArray(arrayLocaliMatch);
-	urlConsigliato = arrayLocaliMatch[0];
+	let iRandom = getRandomUrlFromArray(arrayLocaliMatch);
+	urlConsigliato = arrayLocaliMatch[iRandom];
 	console.log(urlConsigliato);
-
 	nome_locale = mapNomi.get(urlConsigliato);
-
-	document.getElementById('nome_locale').innerHTML = nome_locale;
-	setImage('https://s3-media4.fl.yelpcdn.com/bphoto/9o4XvXuW1X1z1wsmzIxrZw/ls.jpg');
-
 	let dett = mapDettagli.get(urlConsigliato);
+	document.getElementById('nome_locale').innerHTML = nome_locale;
 	document.getElementById("indirizzo").innerHTML = dett.split(';')[0];
 	document.getElementById("telefono").innerHTML = 'Tel: '+dett.split(';')[1];
 	document.getElementById("categorie").innerHTML = 'Categoria: '+dett.split(';')[2];
-
+	setImage('https://s3-media4.fl.yelpcdn.com/bphoto/9o4XvXuW1X1z1wsmzIxrZw/ls.jpg');
 
 	setExplanation1(datiInput, urlConsigliato);
 	setExplanation2(urlConsigliato);
-	//var contextReview = getContextReview(url);
-	//var review = getReview(url);
+
+	arrayLocaliMatch.splice(iRandom,1);
 }
 
 function setExplanation2(url){
@@ -511,10 +506,8 @@ function sceltaArrayUrl(){
 		}
 }
 
-
-
 function getRandomUrlFromArray(array){
-	var max = array.length - 1;
+	var max = Math.floor(array.length - 1/2);
 	var random =Math.floor(Math.random() * (+ max - +0)) + +0;
   console.log("Random Number Generated : " + random );
 	return random;
@@ -694,20 +687,20 @@ function disableButtonRun(id) {
 						document.getElementById(id).style.visibility = 'hidden';
         }
 
+
+
+
 function suggerisciAltro(){
 	var arrayLocaliMatch = sceltaArrayUrl();
-	console.log("lunghezza array "+ arrayLocaliMatch.length);
-	arrayLocaliMatch.splice(0, 1);
-
-	urlConsigliato = arrayLocaliMatch[0];
-
+	let iRandom = getRandomUrlFromArray(arrayLocaliMatch);
+	urlConsigliato = arrayLocaliMatch[iRandom];
 	nome_locale = mapNomi.get(urlConsigliato);
 
-	document.getElementById('nome_locale').innerHTML = nome_locale;
 
 	setImage('https://s3-media4.fl.yelpcdn.com/bphoto/9o4XvXuW1X1z1wsmzIxrZw/ls.jpg');
-	
+
 	let dett = mapDettagli.get(urlConsigliato);
+	document.getElementById('nome_locale').innerHTML = nome_locale;
 	document.getElementById("indirizzo").innerHTML = dett.split(';')[0];
 	document.getElementById("telefono").innerHTML = 'Tel: '+dett.split(';')[1];
 	document.getElementById("categorie").innerHTML = 'Categoria: '+dett.split(';')[2];
@@ -715,9 +708,8 @@ function suggerisciAltro(){
 
 	setExplanation1(datiInput, urlConsigliato);
 	setExplanation2(urlConsigliato);
-
+	arrayLocaliMatch.splice(iRandom,1);
 	alert("Nuovo locale: \n" + nome_locale);
-
 }
 
 //-----------------------------------------------------------------------------
@@ -732,31 +724,32 @@ function saveData(){
 	var explanationPrefer;
 	document.getElementsByName('tipo').forEach(function(button) {
     if (button.checked) {
-        explanationPrefer = button.getAttribute('id');
+         tipo = button.getAttribute('id');
+				 explanationPrefer = tipo[tipo.length-1];
     }
 	});
 
 	document.getElementsByName('comprensione').forEach(function(button) {
     if (button.checked) {
-        comprensione = button.getAttribute('id');
+        comprensione = button.getAttribute('id')[button.getAttribute('id').length-1];
     }
 	});
 
 	document.getElementsByName('convincente').forEach(function(button) {
     if (button.checked) {
-        convincimento = button.getAttribute('id');
+        convincimento = button.getAttribute('id')[button.getAttribute('id').length-1];
     }
 	});
 
 	document.getElementsByName('nuove').forEach(function(button) {
     if (button.checked) {
-        newInfo = button.getAttribute('id');
+        newInfo = button.getAttribute('id')[button.getAttribute('id').length -1];
     }
 	});
 
 	document.getElementsByName('fiducia').forEach(function(button) {
     if (button.checked) {
-        fiducia = button.getAttribute('id');
+        fiducia = button.getAttribute('id')[button.getAttribute('id').length-1];
     }
 	});
 
