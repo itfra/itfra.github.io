@@ -689,11 +689,11 @@ function saveData(){
 	var convincimento =  document.getElementsByName('convincente')[0].checked;
 	var newInfo =  document.getElementsByName('nuove')[0].checked;
 	var fiducia =  document.getElementsByName('fiducia')[0].checked;
-	let compagnia = null;
-	let umore = null;
-	let giorno = null;
-	let salute = null;
-	let pasto = null;
+	let compagnia = undefined;
+	let umore = undefined;
+	let giorno = undefined;
+	let salute = undefined;
+	let pasto = undefined;
 
 	for (var i = 0; i < arraySelectedContext.length; i++) {
 		if (arraySelectedContext[i] == 1){
