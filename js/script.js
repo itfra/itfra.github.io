@@ -636,7 +636,6 @@ function controlloContesti(){
 	let rad3 = document.getElementsByName('compagnia');
 
 	array.splice(0,0,rad1,rad2,rad3,rad4,rad5);
-	console.log(array);
 	for (var i = 0; i < 5; i++) {
 		for (var j = 0; j < array[i].length; j++) {
 			if (array[i][j].checked){
