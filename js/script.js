@@ -698,6 +698,7 @@ function saveData(){
 	for (var i = 0; i < arraySelectedContext.length; i++) {
 		if (arraySelectedContext[i] == 1){
 			console.log(getStringContext(arraySelectedContext[i]));
+			
 			switch (i) {
 				case 0:
 				case 1:
