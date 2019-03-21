@@ -507,7 +507,7 @@ function sceltaArrayUrl(){
 }
 
 function getRandomUrlFromArray(array){
-	var max = Math.floor(array.length - 1/2);
+	var max = Math.floor((array.length - 1)/3);
 	var random =Math.floor(Math.random() * (+ max - +0)) + +0;
   console.log("Random Number Generated : " + random );
 	return random;
