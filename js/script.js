@@ -197,6 +197,7 @@ var datiInput;
 var nome_locale;
 var num_totali;
 var num_spiegati;
+var var urlConsigliato;
 
 // const firebase = require("firebase");
 // // Required for side-effects
@@ -366,7 +367,7 @@ function startExplanationSystem() {
 	var arrayLocaliMatch = sceltaArrayUrl();
 
 	//iRandom = getRandomUrlFromArray(arrayLocaliMatch);
-	var urlConsigliato = arrayLocaliMatch[0];
+	urlConsigliato = arrayLocaliMatch[0];
 	console.log(urlConsigliato);
 
 	nome_locale = mapNomi.get(urlConsigliato);
@@ -600,7 +601,7 @@ function setImage(urlImage){
 	while (imageContainer.firstChild) {
 			imageContainer.removeChild(imageContainer.firstChild);
 	}
-	
+
 	fetch(urlImage)
   .then(res => res.blob()) // Gets the response and returns it as a blob
   .then(blob => {
@@ -663,7 +664,7 @@ function suggerisciAltro(){
 	console.log("lunghezza array "+ arrayLocaliMatch.length);
 	arrayLocaliMatch.splice(0, 1);
 
-	var urlConsigliato = arrayLocaliMatch[0];
+	urlConsigliato = arrayLocaliMatch[0];
 
 	nome_locale = mapNomi.get(urlConsigliato);
 	document.getElementById('nome_locale').innerHTML = nome_locale;
@@ -683,7 +684,14 @@ function suggerisciAltro(){
 function saveData(){
 	//true = context-aware - false = no context-aware
 	var explanationPrefer = document.getElementsByName('tipo')[0].checked;
-	var comprensione =  document.getElementsByName('comprensione')[0].checked;
+
+
+	var comprensione;
+	document.getElementsByName('comprensione')forEach(function(button) {
+    if (button.checked) {
+        comprensione = button.getAttribute('id');
+    }
+	});
 	var convincimento =  document.getElementsByName('convincente')[0].checked;
 	var newInfo =  document.getElementsByName('nuove')[0].checked;
 	var fiducia =  document.getElementsByName('fiducia')[0].checked;
@@ -744,7 +752,8 @@ function saveData(){
 	}
 
 	var data = {
-		url : datiInput[0],
+		url : urlConsigliato,
+		city : datiInput[0],
 		umore : umore,
 		giorno : giorno,
 		pasto :pasto,
