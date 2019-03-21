@@ -341,8 +341,9 @@ function letturaImage(){
 				line = urlExplanation.toString().split('\n');
 				for (var i = 0; i < line.length; i++) {
 					let url = line[i].split(';')[0];
-					let url_image = line[i].split(';')[1];
-					mapImage.set(url + url_image);
+					let image = line[i].split(';')[2];
+					console.log(url + ': ' + image);
+					mapImage.set(url, image);
 				}
     }
 }
@@ -660,11 +661,10 @@ function createListLocali(city){
 
 function setImage(url){
 	let urlImage = mapImage.get(url);
-
-	console.log(urlImage);
+	console.log('url image : ' + urlImage);
 
 	if(urlImage == undefined){
-		urlImage = 'https://www.edemconsulting.it/media/uploads/2018/04/Trattamento-fiscale-delle-spese-per-prestazioni-alberghiere-e-di-ristorazione.jpg';
+		urlImage = 'https://s3-media2.fl.yelpcdn.com/bphoto/RdbyB6uxyU2CRezVxVCptA/ls.jpg';
 	}
 
 	var imageContainer = document.getElementById('image_container');
@@ -716,6 +716,7 @@ function controlloContesti(){
 		alert("ora puoi proseguire");
 		letturaInfo();
 		letturaDettagli();
+		letturaImage();
 	}
 
 }
