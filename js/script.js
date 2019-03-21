@@ -402,28 +402,31 @@ function setExplanation1(dati, url){
 		let contesto = dati[i];
 		let key = url+contesto;
 
-		explanation = mapReview1.get(key);
+		var para = document.createElement("p");
+		var node = document.createTextNode('Ti suggerisco di provare ' + nome_locale +'.');
+		para.appendChild(node);
 
+		explanation = mapReview1.get(key);
 		if (explanation != undefined){
 			num_spiegati ++;
-			var para = document.createElement("p");
-			var node = document.createTextNode('Ti suggeriamo di provare '+ nome_locale + getStringContext(contesto) + 'perchè '+ explanation);
+			node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ' per questo motivo: "'+ explanation + '"');
 			para.appendChild(node);
-			element.appendChild(para);
 		}
-		console.log(key + ': '+ mapReview1.get(key));
 	}
 
-	console.log('totali : '+ num_totali);
-	console.log('spiegati : '+ num_spiegati);
 
-	if (num_spiegati == 0) {
+	if (num_spiegati != 0) {
+		element.appendChild(para);
+	}
+	else {
 		explanation = "non sono state rilevate spiegazioni per questo contesto"
-		var para = document.createElement("p");
-		var node = document.createTextNode(explanation);
+		node = document.createTextNode(explanation);
 		para.appendChild(node);
 		element.appendChild(para);
 	}
+
+		console.log('totali : '+ num_totali);
+		console.log('spiegati : '+ num_spiegati);
 
 }
 
@@ -682,19 +685,42 @@ function suggerisciAltro(){
 // 		SaveData()
 //-----------------------------------------------------------------------------
 function saveData(){
-	//true = context-aware - false = no context-aware
-	var explanationPrefer = document.getElementsByName('tipo')[0].checked;
-
-
 	var comprensione;
+	var convincimento;
+	var newInfo;
+	var fiducia;
+
+	var explanationPrefer;
+	document.getElementsByName('tipo').forEach(function(button) {
+    if (button.checked) {
+        explanationPrefer = button.getAttribute('id');
+    }
+	});
+
 	document.getElementsByName('comprensione').forEach(function(button) {
     if (button.checked) {
         comprensione = button.getAttribute('id');
     }
 	});
-	var convincimento =  document.getElementsByName('convincente')[0].checked;
-	var newInfo =  document.getElementsByName('nuove')[0].checked;
-	var fiducia =  document.getElementsByName('fiducia')[0].checked;
+
+	document.getElementsByName('convincente').forEach(function(button) {
+    if (button.checked) {
+        convincimento = button.getAttribute('id');
+    }
+	});
+
+	document.getElementsByName('nuove').forEach(function(button) {
+    if (button.checked) {
+        newInfo = button.getAttribute('id');
+    }
+	});
+
+	document.getElementsByName('fiducia').forEach(function(button) {
+    if (button.checked) {
+        fiducia = button.getAttribute('id');
+    }
+	});
+
 	let compagnia = null;
 	let umore = null;
 	let giorno = null;

@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Explantio System</title>
+		<title>Context-aware Explanations for Point-of-interest Recommendation</title>
 		<!--=====================================================
 			CSS Stylesheets
 		=====================================================-->
@@ -75,19 +75,19 @@
 											<div class='inner' >
 												<div class='intro-text' >
 
-													<h1>Explanation System</h1>
+													<h1>Context-aware Explanations for Point-of-interest Recommendation</h1>
 
 													<p>
-														Il sistema di spiegazione definito, sfrutta i contesti di interesse dell'utente, creando una spiegazione personale in base a ciò che l'utente preferisce.
+														Lo scopo di questa piattaforma è di fornirti dei suggerimenti su punti di interesse e attività presenti nei dintorni. Il sistema ti chiederà informazioni sulle tue preferenze e sul contesto in cui ti trovi (con chi sei, il tuo umore, il tuo stato di salute) e sulla base di questi dati ti sarà fornito un suggerimento personalizzato. Accanto al suggerimento riceverai anche due diverse spiegazioni che servono a illustrarti i motivi alla base della raccomandazione. Dovrai scegliere quella che ritieni più efficace e quella più vicina alle definizioni che saranno fornite.
 													</p>
 													<p>
-														Ciò che si chiederà di fare in seguito è definire un luogo di interesse tra quelli studiati, scegliere la situazione in cui si preferisce stare o la compagnia con cui si svolgerà l'evento.
+														 Grazie per la collaborazione!
 													</p>
 
 													<div class='intro-btns' >
 
 														<a href='#about' class='btn-custom section-toggle' data-section='about'>
-															Avvia
+															Start
 														</a>
 
 														<!--a href='#contact' class='btn-custom section-toggle' data-section='contact' >
@@ -118,10 +118,12 @@
 								<h2>
 									Seleziona <strong class='color' >contesti</strong>
 								</h2>
+								<p>Indica le tue preferenze e le informazioni di contesto.
+									Importante: non è necessario inserire tutti i contesti</p>
 							</div>
 							<div class="row">
 								<div class="form-group">
-								    <label class="titolo__city" for="city"  >Seleziona Città</label>
+								    <label class="titolo__city" for="city"  ><b>Seleziona Città</b></label>
 								    <select class="form-control" id="city" style="border: solid 1px #00008B;" >
 											<option value="" selected disabled hidden>Scegli la tua Città</option>
 								      <option>Bari</option>
@@ -134,7 +136,7 @@
 								<hr>
 								<div class='col-md-4' >
 									<p>
-										umore
+										<b>umore</b>
 									</p>
 
 									<div class="funkyradio">
@@ -151,7 +153,7 @@
 								</div>
 								<div class='col-md-4' >
 									<p>
-										giorno
+										<b>giorno</b>
 									</p>
 
 									<div class="funkyradio">
@@ -167,7 +169,7 @@
 								</div>
 								<div class='col-md-4' >
 									<p>
-										salute
+										<b>salute</b>
 									</p>
 
 									<div class="funkyradio">
@@ -184,7 +186,7 @@
 								</div>
 								<div class='col-md-4' >
 									<p>
-										compagnia
+										<b>compagnia</b>
 									</p>
 
 									<div class="funkyradio">
@@ -204,7 +206,7 @@
 								</div>
 								<div class='col-md-4' >
 									<p>
-										pasto
+										<b>pasto</b>
 									</p>
 
 									<div class="funkyradio">
@@ -239,7 +241,7 @@
 								</button>
 
 								<button  id="controllo" class='btn-custom' onclick="controlloContesti()">
-									Controllo contesti
+									Suggerisci!
 								</button>
 						</div>
 					</div>
@@ -285,6 +287,10 @@
 								    <div class="md-radio md-radio-inline">
 								      <input id="tipo2" type="radio" name="tipo">
 								      <label for="tipo2">Explanation 2</label>
+								    </div>
+										<div class="md-radio md-radio-inline">
+								      <input id="tipo3" type="radio" name="tipo">
+								      <label for="tipo3">Indifferente</label>
 								    </div>
 									</div>
 									<br>
