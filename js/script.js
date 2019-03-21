@@ -661,8 +661,10 @@ function createListLocali(city){
 function setImage(url){
 	let urlImage = mapImage.get(url);
 
+	console.log(urlImage);
+
 	if(urlImage == undefined){
-		urlImage = 'http://panoramachef.it/wp-content/uploads/2013/09/management-ristorante.jpg';
+		urlImage = 'https://www.edemconsulting.it/media/uploads/2018/04/Trattamento-fiscale-delle-spese-per-prestazioni-alberghiere-e-di-ristorazione.jpg';
 	}
 
 	var imageContainer = document.getElementById('image_container');
