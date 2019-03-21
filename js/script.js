@@ -507,10 +507,20 @@ function sceltaArrayUrl(){
 }
 
 function getRandomUrlFromArray(array){
-	var max = Math.floor((array.length - 1)/3);
-	var random =Math.floor(Math.random() * (+ max - +0)) + +0;
-  console.log("Random Number Generated : " + random );
-	return random;
+	if (datiInput.length == 2){
+		if (datiInput[1] == 3||datiInput[1] == 4||datiInput[1] == 9||datiInput[1] == 10||datiInput[1] == 11||datiInput[1] == 12){
+			return 0;
+		}
+		else{
+			var max = Math.floor((array.length - 1)/5);
+			var random =Math.floor(Math.random() * (+ max - +0)) + +0;
+			return random;
+		}
+	}else{
+		var max = Math.floor((array.length - 1)/3);
+		var random =Math.floor(Math.random() * (+ max - +0)) + +0;
+		return random;
+	}
 }
 
 function getStringContext(s){

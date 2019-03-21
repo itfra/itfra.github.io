@@ -3808,7 +3808,7 @@ https://www.yelp.it/biz/pizzeria-enzo-e-ciro-di-fraddosio-v-c-bari;midweek;Passi
 https://www.yelp.it/biz/xo-caf%C3%A8-torino-3;cena;Pasta all'astice Pasta all'astice Cruditè Cruditè Interno locale Interno locale;0.16931471805599455
 https://www.yelp.it/biz/panificio-ursino-francesco-torino-2;buonasalute;Pasta fresca di grande qualità.;0.42328679513998635
 https://www.yelp.it/biz/pastificio-defilippis-torino;pranzo;Pasta fresca di produzione propria in bella vista.;0.34976871477801835
-https://www.yelp.it/biz/martinucci-bari-2;pranzo;Pasta frolla perfetta, come le diverse farciture!;0.419722457733622
+https://www.yelp.it/biz/martinucci-bari-2;pranzo;Pasta frolla perfetta, come le diverse farciture, buona idea per pausa pranzo!;0.419722457733622
 https://www.yelp.it/biz/la-pagoda-di-hu-lia-meng-torino;cena;Pasta giapponese saltata davvero squisita... insomma, consigliatissimo!;0.2998017555240157
 https://www.yelp.it/biz/la-pagoda-di-hu-lia-meng-torino;pranzo;Pasta giapponese saltata davvero squisita... insomma, consigliatissimo!;0.2998017555240157
 https://www.yelp.it/biz/bottega-baretti-moncalieri;cena;Pasta gommosa e mezza cruda!;0.5246530721670275
