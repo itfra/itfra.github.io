@@ -400,31 +400,30 @@ function setExplanation1(dati, url){
 
 	for(var i = 1; i < dati.length; i++){
 		let contesto = dati[i];
-		let key = url + contesto;
-
-		var para = document.createElement("p");
-		var node = document.createTextNode('Ti suggerisco di provare ' + nome_locale +'.');
-		para.appendChild(node);
-
+		let key = url+contesto;
 
 		explanation = mapReview1.get(key);
+
 		if (explanation != undefined){
 			num_spiegati ++;
-			console.log(explanation);
-			var node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ' per questo motivo: "'+ explanation + '"');
+			var para = document.createElement("p");
+			var node = document.createTextNode('Ti suggeriamo di provare '+ nome_locale + getStringContext(contesto) + 'perchè '+ explanation);
 			para.appendChild(node);
+			element.appendChild(para);
 		}
+		console.log(key + ': '+ mapReview1.get(key));
 	}
+
+	console.log('totali : '+ num_totali);
+	console.log('spiegati : '+ num_spiegati);
 
 	if (num_spiegati == 0) {
 		explanation = "non sono state rilevate spiegazioni per questo contesto"
-		node = document.createTextNode(explanation);
+		var para = document.createElement("p");
+		var node = document.createTextNode(explanation);
 		para.appendChild(node);
 		element.appendChild(para);
 	}
-
-		console.log('totali : '+ num_totali);
-		console.log('spiegati : '+ num_spiegati);
 
 }
 
