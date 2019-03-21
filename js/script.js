@@ -197,7 +197,7 @@ var datiInput;
 var nome_locale;
 var num_totali;
 var num_spiegati;
-var var urlConsigliato;
+var urlConsigliato;
 
 // const firebase = require("firebase");
 // // Required for side-effects
