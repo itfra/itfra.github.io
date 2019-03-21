@@ -687,7 +687,7 @@ function saveData(){
 
 
 	var comprensione;
-	document.getElementsByName('comprensione')forEach(function(button) {
+	document.getElementsByName('comprensione').forEach(function(button) {
     if (button.checked) {
         comprensione = button.getAttribute('id');
     }
