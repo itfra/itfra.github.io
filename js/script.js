@@ -596,6 +596,11 @@ function createListLocali(city){
 }
 
 function setImage(urlImage){
+	var imageContainer = document.getElementById('image_container');
+	while (imageContainer.firstChild) {
+			imageContainer.removeChild(imageContainer.firstChild);
+	}
+	
 	fetch(urlImage)
   .then(res => res.blob()) // Gets the response and returns it as a blob
   .then(blob => {
@@ -662,11 +667,6 @@ function suggerisciAltro(){
 
 	nome_locale = mapNomi.get(urlConsigliato);
 	document.getElementById('nome_locale').innerHTML = nome_locale;
-
-	var imageContainer = document.getElementById('image_container');
-	while (imageContainer.firstChild) {
-	    imageContainer.removeChild(imageContainer.firstChild);
-	}
 
 	setImage('https://s3-media4.fl.yelpcdn.com/bphoto/9o4XvXuW1X1z1wsmzIxrZw/ls.jpg');
 
