@@ -488,54 +488,52 @@ function getRandomUrlFromArray(array){
 function getStringContext(s){
 	text = "";
 	switch (s) {
-		case 'buono':
-			text = ' quando sei di buon umore ';
+		case "buono" :
+			text = " quando sei di buon umore ";
 			break;
-		case 'non_buono':
-			text = ' se sei di cattivo umore ';
+		case "non_buono":
+			text = " se sei di cattivo umore ";
 			break;
-		case 'feriale':
-			text = ' in settiman ';
+		case "feriale":
+			text = " in settiman ";
 			break;
-		case 'festivo':
-			text = ' nel week-end ';
+		case "festivo":
+			text = " nel week-end ";
 			break;
-		case 'buona':
-			text = ' se sei in buona salute ';
+		case "buona":
+			text = " se sei in buona salute ";
 			break;
-		case 'non_buona':
-			text = ' se hai Allergie/Intolleranze/Diabete ';
+		case "non_buona":
+			text = " se hai Allergie/Intolleranze/Diabete ";
 			break;
-		case 'amici':
-			text = ' con Amici ';
+		case "amici":
+			text = " con Amici ";
 			break;
-		case 'coppia':
-			text = ' in Coppia ';
+		case "coppia":
+			text = " in Coppia ";
 			break;
-		case 'famiglia':
-			text = ' in Famiglia ';
+		case "famiglia":
+			text = " in Famiglia ";
 			break;
-		case 'colazione':
-			text = ' a colazione ';
+		case "colazione":
+			text = " a colazione ";
 			break;
-		case 'pranzo':
-			text = ' a pranzo ';
+		case "pranzo":
+			text = " a pranzo ";
 			break;
-		case 'cena':
-			text = ' a cena ';
+		case "cena":
+			text = " a cena ";
 			break;
-		case 'ricevimento':
-			text = ' per un Ricevimento ';
+		case "ricevimento":
+			text = " per un Ricevimento ";
 			break;
 
 		default:
 	}
 	return text;
-
 }
 
 function getIdContext(s){
-
 	switch (s) {
 		case 'buono':
 			text = 11;
@@ -689,39 +687,55 @@ function saveData(){
 	var convincimento =  document.getElementsByName('convincente')[0].checked;
 	var newInfo =  document.getElementsByName('nuove')[0].checked;
 	var fiducia =  document.getElementsByName('fiducia')[0].checked;
-	let compagnia = undefined;
-	let umore = undefined;
-	let giorno = undefined;
-	let salute = undefined;
-	let pasto = undefined;
+	let compagnia = null;
+	let umore = null;
+	let giorno = null;
+	let salute = null;
+	let pasto = null;
 
 	for (var i = 0; i < arraySelectedContext.length; i++) {
 		if (arraySelectedContext[i] == 1){
 			console.log(getStringContext(arraySelectedContext[i]));
-			
+
 			switch (i) {
 				case 0:
+					compagnia = 'famiglia';
+					break;
 				case 1:
+					compagnia = 'coppia';
+					break;
 				case 2:
-					compagnia = getStringContext(arraySelectedContext[i]);
+					compagnia = 'amici';
 					break;
 				case 3:
+					giorno = 'festivo';
+					break;
 				case 4:
-					giorno = getStringContext(arraySelectedContext[i]);
+					giorno = 'feriale';
 					break;
 				case 5:
+					pasto = 'colazione';
+					break;
 				case 6:
+					pasto = 'pranzo';
+					break;
 				case 7:
+					pasto = 'cena';
+					break;
 				case 8:
-					pasto = getStringContext(arraySelectedContext[i]);
+					pasto = 'ricevimento';
 					break;
 				case 9:
+					salute = 'buona';
+					break;
 				case 10:
-					salute = getStringContext(arraySelectedContext[i]);
+					salute = 'non_buona';
 					break;
 				case 11:
+					umore = 'buono';
+					break;
 				case 12:
-					umore = getStringContext(arraySelectedContext[i]);
+					umore = 'non_buono';
 					break;
 				default:
 
