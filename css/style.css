@@ -242,7 +242,7 @@ body.border-dark .main-content:after{
 =======================================================*/
 .section-main{
 	background-size:cover;
-	background-image:url(../img/bg.jpg);
+	/* background-image:url(../img/bg.jpg); */
 	background:#303F9F;
 
 }
