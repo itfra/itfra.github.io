@@ -387,7 +387,7 @@ function setExplanation2(url){
 	if (explanation == undefined){
 		explanation = "non sono state rilevate spiegazioni per questo contesto"
 	}
-	document.getElementById("explanation2").innerHTML ='Ti sugeriamo il locale '+ nome_locale + ' in quanto ' + explanation;
+	document.getElementById("explanation2").innerHTML ='Ti sugeriamo il locale '+ nome_locale + ' perchè: "' + explanation + '"';
 }
 
 function setExplanation1(dati, url){
