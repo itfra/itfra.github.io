@@ -328,7 +328,7 @@ function letturaImage(){
     // read text from URL location
 		var urlExplanation = "";
 		var request = new XMLHttpRequest();
-    request.open('GET', 'js/urlImage2.txt');
+    request.open('GET', 'js/urlImage.txt');
     request.send();
 		request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
@@ -660,26 +660,28 @@ function createListLocali(city){
 }
 
 function setImage(url){
-	let urlImage = mapImage.get(url);
-	console.log('url image : ' + urlImage);
-
-	if(urlImage == undefined){
-		urlImage = '/img/nessuna_immagine.jpg';
-	}
-
 	var imageContainer = document.getElementById('image_container');
 	while (imageContainer.firstChild) {
 			imageContainer.removeChild(imageContainer.firstChild);
 	}
 
-	fetch(urlImage)
-  .then(res => res.blob()) // Gets the response and returns it as a blob
-  .then(blob => {
-    let objectURL = URL.createObjectURL(blob);
-    let myImage = new Image();
-    myImage.src = objectURL;
-    document.getElementById('image_container').appendChild(myImage)
-});
+	let urlImage = mapImage.get(url);
+	console.log('url image : ' + urlImage);
+	if(urlImage == undefined){
+		var img = document.createElement("img");
+  	img.src = "nessuna_immagine.png";
+  	document.getElementById('image_container').appendChild(img);
+	}	else{
+		fetch(urlImage)
+		.then(res => res.blob()) // Gets the response and returns it as a blob
+		.then(blob => {
+			let objectURL = URL.createObjectURL(blob);
+			let myImage = new Image();
+			myImage.src = objectURL;
+			document.getElementById('image_container').appendChild(myImage)
+		});
+	}
+
 }
 
 function controlloContesti(){
