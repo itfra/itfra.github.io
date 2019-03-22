@@ -664,7 +664,7 @@ function setImage(url){
 	console.log('url image : ' + urlImage);
 
 	if(urlImage == undefined){
-		urlImage = 'https://s3-media2.fl.yelpcdn.com/bphoto/RdbyB6uxyU2CRezVxVCptA/ls.jpg';
+		urlImage = 'img/nessuna_immagine.jpg';
 	}
 
 	var imageContainer = document.getElementById('image_container');
