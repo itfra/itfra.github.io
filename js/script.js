@@ -462,7 +462,7 @@ function setExplanation1(dati, url){
 		if (explanation != undefined){
 			num_spiegati ++;
 			var para = document.createElement("p");
-			var node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ', per questo motivo: "'+ explanation +'"');
+			var node = document.createTextNode('E’ un locale adatto per ' + getStringContext(contesto) + ' per questo motivo: "'+ explanation +'"');
 			para.appendChild(node);
 			element.appendChild(para);
 		}
@@ -571,13 +571,13 @@ function getStringContext(s){
 			text = " quando hai problemi del tipo Allergie/Intolleranze/Diabete ";
 			break;
 		case "amici":
-			text = " gli Amici ";
+			text = " trascorrere del tempo con gli Amici ";
 			break;
 		case "coppia":
-			text = " le Coppie ";
+			text = " trascorrere del tempo in Coppia ";
 			break;
 		case "famiglia":
-			text = " la Famiglia ";
+			text = " trascorrere del tempo con la famiglia ";
 			break;
 		case "colazione":
 			text = " la colazione ";
