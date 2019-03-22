@@ -341,7 +341,7 @@ function letturaImage(){
 				line = urlExplanation.toString().split('\n');
 				for (var i = 0; i < line.length; i++) {
 					let url = line[i].split(';')[0];
-					let image = line[i].split(';')[2];
+					let image = line[i].split(';')[1];
 					console.log(url + ': ' + image);
 					mapImage.set(url, image);
 				}
