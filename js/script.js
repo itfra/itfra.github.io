@@ -737,6 +737,8 @@ function disableButtonRun(id) {
 
 
 function suggerisciAltro(){
+	saveData();
+	
 	var arrayLocaliMatch = sceltaArrayUrl();
 	let iRandom = getRandomUrlFromArray(arrayLocaliMatch);
 	urlConsigliato = arrayLocaliMatch[iRandom];
@@ -759,7 +761,7 @@ function suggerisciAltro(){
 }
 
 //-----------------------------------------------------------------------------
-// 		SaveData()
+// 		saveData()
 //-----------------------------------------------------------------------------
 function saveData(){
 	var comprensione;
