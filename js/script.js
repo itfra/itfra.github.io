@@ -664,7 +664,7 @@ function setImage(url){
 	console.log('url image : ' + urlImage);
 
 	if(urlImage == undefined){
-		urlImage = 'img/nessuna_immagine.jpg';
+		urlImage = '/img/nessuna_immagine.jpg';
 	}
 
 	var imageContainer = document.getElementById('image_container');
