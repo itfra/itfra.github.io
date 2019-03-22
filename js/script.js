@@ -715,7 +715,7 @@ function controlloContesti(){
 		alert("Selezionare almeno un contesto per proseguire");
 	}else {
 		enableButtonRun("button-run");
-		alert("ora puoi proseguire");
+		alert("Abbiamo trovato dei sugerimenti per te! \n Clicca su RUN per visualizzarli");
 		letturaInfo();
 		letturaDettagli();
 		letturaImage();
