@@ -761,7 +761,7 @@ function suggerisciAltro(){
 }
 
 function getConfirmation() {
-               var retVal = confirm("Vuoi salvare la valutaione?");
+               var retVal = confirm("Vuoi salvare la valutazione?");
                if( retVal == true ) {
                   console.log("User wants to continue!");
 									saveData();
