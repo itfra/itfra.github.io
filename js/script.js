@@ -885,9 +885,8 @@ function saveData(){
 		fiducia : fiducia
 	}
 
-console.log(data);
-	//writeNewPost(data);
-	//clearAllRadios();
+writeNewPost(data);
+clearAllRadios();
 }
 
 function writeNewPost(postData) {
