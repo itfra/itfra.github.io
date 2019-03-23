@@ -1331,3 +1331,39 @@ $md-radio-ripple-size: 15px;
         }
     }
 }
+
+/* ---------------------------------------------------------------- */
+/* pop up */
+
+.popup{
+	width: 200px;
+	height: 400px;
+	background: #fefefe;
+	margin: 40px auto;
+	padding: 10px 20px;
+	position: relative;
+	color: #333;
+}
+
+.overlay{
+	position: none; /* schermo intero*/
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  height: 100vh;
+	background: rgba(0,0,0,0.7); /* colore sfondo e opcità */
+	text-align: center;
+	display: block; /*cambiaremo in display: none*/
+}
+
+#close{
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	color: #fff;
+}
+
+#close:hover{
+	cursor: pointer;
+}

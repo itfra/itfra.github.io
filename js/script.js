@@ -733,12 +733,12 @@ function disableButtonRun(id) {
 						document.getElementById(id).style.visibility = 'hidden';
         }
 
-
-
-
 function suggerisciAltro(){
-	saveData();
-	
+
+	getConfirmation();
+
+	console.log("prosaguo");
+
 	var arrayLocaliMatch = sceltaArrayUrl();
 	let iRandom = getRandomUrlFromArray(arrayLocaliMatch);
 	urlConsigliato = arrayLocaliMatch[iRandom];
@@ -757,9 +757,20 @@ function suggerisciAltro(){
 	setExplanation1(datiInput, urlConsigliato);
 	setExplanation2(urlConsigliato);
 	arrayLocaliMatch.splice(iRandom,1);
-	alert("Nuovo locale: \n" + nome_locale);
+	alert("Nuovo locale suggerito: \n" + nome_locale);
 }
 
+function getConfirmation() {
+               var retVal = confirm("Vuoi salvare la valutaione?");
+               if( retVal == true ) {
+                  console.log("User wants to continue!");
+									saveData();
+                  return true;
+               } else {
+                  console.log("Non salva");
+                  return false;
+               }
+            }
 //-----------------------------------------------------------------------------
 // 		saveData()
 //-----------------------------------------------------------------------------
@@ -874,8 +885,9 @@ function saveData(){
 		fiducia : fiducia
 	}
 
-	writeNewPost(data);
-	clearAllRadios();
+console.log(data);
+	//writeNewPost(data);
+	//clearAllRadios();
 }
 
 function writeNewPost(postData) {
