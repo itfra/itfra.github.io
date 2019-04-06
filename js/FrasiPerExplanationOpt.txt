@@ -333,8 +333,6 @@ https://www.yelp.it/biz/frat%C3%B2-torino;amici;Antipasti a buffet, semplici ma 
 https://www.yelp.it/biz/la-tana-del-polpo-bari;cena;Antipasti abbondanti e buoni, il pacchero col pesce era buonissimo, consigliatissimo!;0.894860385419959
 https://www.yelp.it/biz/martin-pescatore-torino;pranzo;Antipasti abbondanti e molto ricercati.;0.42328679513998635
 https://www.yelp.it/biz/premiata-osteria-dellhermada-torino;cena;Antipasti abbondanti, ma scadenti come qualità.;0.42328679513998635
-https://www.yelp.it/biz/premiata-osteria-dellhermada-torino;buonasalute;Antipasti abbondanti, ma scadenti come qualità.;0.42328679513998635
-https://www.yelp.it/biz/a-la-merenda-sinoira-torino;buonasalute;Antipasti abbondanti, ma scadenti come qualità.;0.42328679513998635
 https://www.yelp.it/biz/a-la-merenda-sinoira-torino;cena;Antipasti abbondanti, ma scadenti come qualità.;0.42328679513998635
 https://www.yelp.it/biz/premiata-osteria-dellhermada-torino;pranzo;Antipasti abbondanti, ma scadenti come qualità.;0.42328679513998635
 https://www.yelp.it/biz/les-arcades-tamango-torino;buonasalute;Antipasti abbondantie pizza buonissimi accompagnata da buona birra fresca.;0.29828679513998635
@@ -2334,7 +2332,7 @@ https://www.yelp.it/biz/vyta-torino;cena;Insalate e panini pronti con prodotti d
 https://www.yelp.it/biz/la-casa-del-demone-torino;buonasalute;Insomma porzioni sufficienti (ma non abbondantissime), qualità decente, prezzo medio alto, ma location particolare e servizio attento.;12.625.329.210.237.000
 https://www.yelp.it/biz/pizza-ad-hoc-torino;famiglia;Insomma, una bella serata in un clima piacevolmente familiare.;0.2821911967599909
 https://www.yelp.it/biz/boheme-torino;midweek;Inspiegabilmente deserto nonostante fosse mezzanotte del venerdì;0.2
-https://www.yelp.it/biz/osteria-della-travi-bari;buonumore;Insuperabili le orecchiette con il ragù e la braciola.personale cordiale e veloce.;1.049.306.144.334.050
+https://www.yelp.it/biz/osteria-della-travi-bari;buonumore;Insuperabili Personale cordiale e veloce.;1.049.306.144.334.050
 https://www.yelp.it/biz/la-cabane-torino-2;midweek;Interessante anche per gli orari: aperto fino alle 4 del mattino il sabato e la domenica, fino alle 3 gli altri giorni, tranne il venerdì.;0.5246530721670275
 https://www.yelp.it/biz/marechiaro-torino;midweek;Interessante anche per gli orari: aperto fino alle 4 del mattino il sabato e la domenica, fino alle 3 gli altri giorni, tranne il venerdì.;0.17488435738900918
 https://www.yelp.it/biz/marechiaro-torino;weekend;Interessante anche per gli orari: aperto fino alle 4 del mattino il sabato e la domenica, fino alle 3 gli altri giorni, tranne il venerdì.;0.17488435738900918

@@ -232,6 +232,7 @@ function letturaReview1(){
 					let url = line[i].split(';')[0];
 					let contesto = line[i].split(';')[1];
 					let frase = line[i].split(';')[2];
+					console.log(contesto);
 					mapReview1.set(url + contesto,frase);
 				}
     }
@@ -342,7 +343,6 @@ function letturaImage(){
 				for (var i = 0; i < line.length; i++) {
 					let url = line[i].split(';')[0];
 					let image = line[i].split(';')[1];
-					console.log(url + ': ' + image);
 					mapImage.set(url, image);
 				}
     }
@@ -454,11 +454,14 @@ function setExplanation1(dati, url){
 	para.appendChild(node);
 	element.appendChild(para);
 
+	console.log(dati);
+
 	for(var i = 1; i < dati.length; i++){
 		let contesto = dati[i];
 		let key = url+contesto;
 
 		explanation = mapReview1.get(key);
+		console.log('kay ' + key);
 		if (explanation != undefined){
 			num_spiegati ++;
 			var para = document.createElement("p");
@@ -552,22 +555,22 @@ function getRandomUrlFromArray(array){
 function getStringContext(s){
 	text = "";
 	switch (s) {
-		case "buono" :
+		case "buonumore" :
 			text = " quando sei di buon umore ";
 			break;
-		case "non_buono":
+		case "nonbuonumore":
 			text = " quando sei di cattivo umore ";
 			break;
-		case "feriale":
+		case "midweek":
 			text = " i giorni feriali ";
 			break;
-		case "festivo":
+		case "weekend":
 			text = " i giorni festivi ";
 			break;
-		case "buona":
+		case "buonasalute":
 			text = " quando sei in buona salute ";
 			break;
-		case "non_buona":
+		case "nonbuonasalute":
 			text = " quando hai problemi del tipo Allergie/Intolleranze/Diabete ";
 			break;
 		case "amici":
@@ -599,22 +602,22 @@ function getStringContext(s){
 
 function getIdContext(s){
 	switch (s) {
-		case 'buono':
+		case 'buonumore':
 			text = 11;
 			break;
-		case 'non_buono':
+		case 'nonbuonumore':
 			text = 12;
 			break;
-		case 'feriale':
+		case 'midweek':
 			text = 4;
 			break;
-		case 'festivo':
+		case 'weekend':
 			text = 3;
 			break;
-		case 'buona':
+		case 'buonasalute':
 			text = 9;
 			break;
-		case 'non_buona':
+		case 'nonbuonasalute':
 			text = 10;
 			break;
 		case 'amici':
@@ -833,10 +836,10 @@ function saveData(){
 					compagnia = 'amici';
 					break;
 				case 3:
-					giorno = 'festivo';
+					giorno = 'weekend';
 					break;
 				case 4:
-					giorno = 'feriale';
+					giorno = 'midweek';
 					break;
 				case 5:
 					pasto = 'colazione';
@@ -851,16 +854,16 @@ function saveData(){
 					pasto = 'ricevimento';
 					break;
 				case 9:
-					salute = 'buona';
+					salute = 'buonasalute';
 					break;
 				case 10:
-					salute = 'non_buona';
+					salute = 'nonbuonasalute';
 					break;
 				case 11:
-					umore = 'buono';
+					umore = 'buonumore';
 					break;
 				case 12:
-					umore = 'non_buono';
+					umore = 'nonbuonumore';
 					break;
 				default:
 
